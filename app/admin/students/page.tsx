@@ -43,7 +43,7 @@ export default function AdminStudentsPage() {
 
   const handleAddStudent = async (studentData: unknown) => {
     try {
-      const res = await fetch("/api/admin/students", {
+      const res = await fetch("/admin/students/api", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(studentData),
@@ -65,7 +65,7 @@ export default function AdminStudentsPage() {
 
   const handleEditStudent = async (studentData: Student) => {
     try {
-      const res = await fetch("/api/admin/students", {
+      const res = await fetch("/admin/students/api", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(studentData),
@@ -89,7 +89,7 @@ export default function AdminStudentsPage() {
   const handleDeleteStudent = async (id: string) => {
     if (!confirm("Bạn có chắc chắn muốn xóa học viên này không?")) return;
     try {
-      const res = await fetch("/api/admin/students", {
+      const res = await fetch("/admin/students/api", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),
